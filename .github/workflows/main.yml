@@ -1,22 +1,17 @@
-name: Python Tests
+name: EJ1
 
-on: [push, pull_request]
+on: push
 
 jobs:
-  test:
+  probar_software:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Descargar código
+      - name: Bajar codigo
         uses: actions/checkout@v7
-
-      - name: Configurar Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.x'
 
       - name: Instalar pytest
         run: pip install pytest
 
-      - name: Ejecutar tests
+      - name: Probar codigo
         run: pytest -v test.py
